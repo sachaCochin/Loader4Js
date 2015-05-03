@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2015 Sacha Cochin <sacha.cochin@etu.univ-orleans.fr>.
+ * Copyright 2015 Sacha Cochin <sacha.cochin@gmail.com>.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -72,9 +72,6 @@
                     $(this.element).find('.loader4js-logo').attr('class', 'loader4js-logo loader4js-popandturn');   
                 }
             },
-            refresh: function() {
-                this.init();
-            },
             hide: function () {
                 $(this.element).hide();
             },
@@ -93,12 +90,8 @@
          * return plugin instance.
          */
         $.fn[pluginName] = function (options) {
-
             var plugin = this.data("plugin_" + pluginName);
-
-            // has plugin instantiated ?
             if (plugin instanceof Plugin) {
-                // if have options arguments, call plugin.init() again
                 if (typeof options !== 'undefined') {
                     plugin.init(options);
                 }
@@ -106,7 +99,6 @@
                 plugin = new Plugin(this, options);
                 this.data("plugin_" + pluginName, plugin);
             }
-            
             return plugin;
         };
 })( jQuery, window, document );
