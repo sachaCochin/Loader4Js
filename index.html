@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Load4Js demo</title>
+	<link rel="stylesheet" href="css/loader4js.css">
+</head>
+<body>
+	<span id="loader">aze</span>
+
+
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script> window.jQuery || document.write('<script src="jquery.js" type="text/javascript"><\/script>')</script>
+
+	<script src="loader4js.js"></script>
+	<script type="text/javascript">
+		function isready() {
+			$('#loader').Loader4Js({
+				state : 'shown',
+				text: 'Cool'
+			});
+		}
+		$(document).ready(isready());
+	</script>
+
+</body>
+</html>

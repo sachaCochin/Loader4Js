@@ -1,0 +1,183 @@
+/*
+The MIT License
+
+Copyright 2015 Sacha Cochin <sacha.cochin@etu.univ-orleans.fr>.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+$loader4js_logo_width : 100px;
+$loader4js_logo_height : 100px;
+
+$loader4js_dot_width : 20px;
+$loader4js_dot_height : 20px;
+
+$col_loader4js_green : #9BCB19;
+$col_loader4js_orange : #C37427;
+$col_loader4js_blue : #75B0C8;
+$col_loader4js_yellow : #efe24b;
+
+$loader4js_fontsize : 42px;
+
+$loader4js_dots_animation_duration : 2s;
+$loader4js_points_animation_duration : 1s;
+
+.loader4jsoverlay {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 99999;
+
+    .loader4js-container {
+        margin-left: 50%;
+        margin-top: 50vh;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+        color: white;
+
+        h1, span {
+            font-weight: bolder;
+            font-size: $loader4js_fontsize;
+            display: inline-block;
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+        }
+
+        .loader4js-first-point {
+            animation: loader4js_anim_first_point linear $loader4js_points_animation_duration infinite;
+        }
+
+        .loader4js-second-point {
+            animation: loader4js_anim_second_point linear $loader4js_points_animation_duration infinite;
+        }
+
+        .loader4js-third-point {
+            animation: loader4js_anim_third_point linear $loader4js_points_animation_duration infinite;
+        }
+
+        .loader4js-logo {
+            display: inline-block;
+            position: relative;
+
+            height: $loader4js_logo_height;
+            width: $loader4js_logo_width;
+            
+            &.loader4js-popandturn {
+                animation: loader4js_anim_rotat $loader4js_dots_animation_duration infinite;
+
+                .loader4js-top-dot {
+                    animation: loader4js_anim_top_dot $loader4js_dots_animation_duration infinite;
+                }
+                .loader4js-left-dot {
+                    animation: loader4js_anim_left_dot $loader4js_dots_animation_duration infinite;
+                }
+                .loader4js-right-dot {
+                    animation: loader4js_anim_right_dot $loader4js_dots_animation_duration infinite;
+                }
+                .loader4js-bottom-dot { 
+                    animation: loader4js_anim_bottom_dot $loader4js_dots_animation_duration infinite;
+                }
+            }
+
+            span {
+                position: absolute;
+                display: block;
+                height: $loader4js_dot_height;
+                width: $loader4js_dot_width;
+
+                border-radius: 50%;
+            }
+
+            .loader4js-top-dot {
+                top: 0px;
+                left: ($loader4js_logo_width / 2) - ($loader4js_dot_width / 2);
+                background-color: $col_loader4js_blue;
+            }
+
+            .loader4js-left-dot {
+                left: 0px;
+                top: ($loader4js_logo_height / 2) - ($loader4js_dot_height / 2);
+                background-color: $col_loader4js_green;
+            }
+
+            .loader4js-right-dot {
+                right: 0px;
+                top: ($loader4js_logo_height / 2) - ($loader4js_dot_height / 2);
+                background-color: $col_loader4js_orange;
+            }
+
+            .loader4js-bottom-dot {
+                left: ($loader4js_logo_width / 2) - ($loader4js_dot_width / 2);
+                bottom: 0px;
+                background-color: $col_loader4js_yellow;
+            }
+        }
+    }
+}
+
+@keyframes loader4js_anim_rotat {
+    0%  {transform: rotateZ(0deg);}
+    50%  {transform: rotateZ(480deg);}
+    100%  {transform: rotateZ(0deg);}
+}
+
+@keyframes loader4js_anim_top_dot {
+    0%  {top: 0px; opacity: 1;}
+    50%  {top: 32px; opacity: 0.9;}
+    100% {top: 0px; opacity: 1;}
+}
+@keyframes loader4js_anim_bottom_dot {
+    0%  {bottom: 0px; opacity: 1;}
+    50%  {bottom: 32px; opacity: 0.9;}
+    100% {bottom: 0px; opacity: 1;}
+}
+@keyframes loader4js_anim_left_dot {
+    0%  {left: 0px; opacity: 1;}
+    50%  {left: 32px; opacity: 0.9;}
+    100% {left: 0px; opacity: 1;}
+}
+@keyframes loader4js_anim_right_dot {
+    0%  {right: 0px; opacity: 1;}
+    50%  {right: 32px; opacity: 0.9;}
+    100% {right: 0px; opacity: 1;}
+}
+
+@keyframes loader4js_anim_first_point {
+    0%  {opacity: 0.5;}
+    25%  {opacity: 1;}
+    50%  {opacity: 0.5;}
+    75% {opacity: 0;}
+    100% {opacity: 0;}
+}
+@keyframes loader4js_anim_second_point {
+    0%  {opacity: 0;}
+    25%  {opacity: 0;}
+    50%  {opacity: 1;}
+    75% {opacity: 0.5;}
+    100% {opacity: 0;}
+}
+@keyframes loader4js_anim_third_point {
+    0%  {opacity: 0;}
+    25%  {opacity: 0;}
+    50%  {opacity: 0.5;}
+    75% {opacity: 1;}
+    100% {opacity: 0.5;}
+}
