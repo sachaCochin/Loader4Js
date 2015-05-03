@@ -71,14 +71,16 @@
                 } else if(this.settings.theme === "default" || this.settings.theme === "popandturn" ) {
                     $(this.element).find('.loader4js-logo').attr('class', 'loader4js-logo loader4js-popandturn');   
                 }
+
+                this.hide();
             },
             refresh: function() {
                 this._init();
             },
-            hide_loader: function () {
+            hide: function () {
                 $(this.element).hide();
             },
-            show_loader: function() {
+            show: function() {
                 $(this.element).show();
             },
             setText: function(text) {
