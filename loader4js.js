@@ -30,7 +30,7 @@
             defaults = {
                 state: "hidden",
                 theme: "default",
-                text : "A momenteeeee please" 
+                text : "A moment please" 
             };
 
         function Plugin ( element, options ) {
@@ -38,18 +38,18 @@
             this.settings = $.extend( {}, defaults, options );
             this._defaults = defaults;
             this._name = pluginName;
-            this._init();
+            this.init();
         }
 
         $.extend(Plugin.prototype, {
-            _initHTMLContent: function() {
+            setHTMLContent: function() {
                 $(this.element).html('<div class="loader4jsoverlay"><div class="loader4js-container"><div class="loader4js-logo"><span class="loader4js-top-dot"><!-- empty --></span><span class="loader4js-left-dot"><!-- empty --></span><span class="loader4js-right-dot"><!-- empty --></span><span class="loader4js-bottom-dot"><!-- empty --></span></div><div class="loader4js-text"><h1><!-- empty --></h1><span class="loader4js-first-point">.</span><span class="loader4js-second-point">.</span><span class="loader4js-third-point">.</span></div></div></div>');
             },
-            _init: function () {
+            init: function () {
                 ///////////////
                 //// HTML /////
                 ///////////////
-                this._initHTMLContent();
+                this.setHTMLContent();
 
                 ///////////////
                 //// State ////
@@ -73,7 +73,7 @@
                 }
             },
             refresh: function() {
-                this._init();
+                this.init();
             },
             hide: function () {
                 $(this.element).hide();
