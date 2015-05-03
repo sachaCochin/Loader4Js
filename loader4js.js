@@ -54,7 +54,7 @@
                 ///////////////
                 //// State ////
                 ///////////////
-                (this.settings.state === "shown") ? this.show_loader() : this.hide_loader();
+                (this.settings.state === "shown") ? this.show() : this.hide();
 
                 ////////////////
                 ///// Text /////
@@ -71,8 +71,6 @@
                 } else if(this.settings.theme === "default" || this.settings.theme === "popandturn" ) {
                     $(this.element).find('.loader4js-logo').attr('class', 'loader4js-logo loader4js-popandturn');   
                 }
-
-                this.hide();
             },
             refresh: function() {
                 this._init();
