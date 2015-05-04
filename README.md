@@ -33,7 +33,7 @@ $('element').Loader4Js({
 
 ### Basic manipulations ###
 
-Some basic manipulations of the Loader4Js instance.
+Some basic manipulations of our Loader4Js instance.
 
 ```
 #!javascript
