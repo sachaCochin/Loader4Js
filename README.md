@@ -41,7 +41,6 @@ Some basic manipulations of the Loader4Js instance.
 // Hide the loader
 $('element').Loader4Js().hide();
 
-
 // Show the loader
 $('element').Loader4Js().show();
 
