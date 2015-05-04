@@ -1,0 +1,168 @@
+/*
+The MIT License
+
+Copyright 2015 Sacha Cochin <sacha.cochin@gmail.com>.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+.loader4jsoverlay {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 99999; }
+  .loader4jsoverlay .loader4js-container {
+    margin-left: 50%;
+    margin-top: 50vh;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    color: white; }
+    .loader4jsoverlay .loader4js-container h1, .loader4jsoverlay .loader4js-container span {
+      font-weight: bolder;
+      font-size: 42px;
+      display: inline-block;
+      font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+    .loader4jsoverlay .loader4js-container #loader4js-first-point {
+      animation: loader4js_anim_first_point linear 1s infinite; }
+    .loader4jsoverlay .loader4js-container #loader4js-second-point {
+      animation: loader4js_anim_second_point linear 1s infinite; }
+    .loader4jsoverlay .loader4js-container #loader4js-third-point {
+      animation: loader4js_anim_third_point linear 1s infinite; }
+    .loader4jsoverlay .loader4js-container .loader4js-logo {
+      display: inline-block;
+      position: relative;
+      height: 100px;
+      width: 100px; }
+      .loader4jsoverlay .loader4js-container .loader4js-logo.loader4js-popandturn {
+        animation: loader4js_anim_rotat 2s infinite; }
+        .loader4jsoverlay .loader4js-container .loader4js-logo.loader4js-popandturn #loader4js-top-dot {
+          animation: loader4js_anim_top_dot 2s infinite; }
+        .loader4jsoverlay .loader4js-container .loader4js-logo.loader4js-popandturn #loader4js-left-dot {
+          animation: loader4js_anim_left_dot 2s infinite; }
+        .loader4jsoverlay .loader4js-container .loader4js-logo.loader4js-popandturn #loader4js-right-dot {
+          animation: loader4js_anim_right_dot 2s infinite; }
+        .loader4jsoverlay .loader4js-container .loader4js-logo.loader4js-popandturn #loader4js-bottom-dot {
+          animation: loader4js_anim_bottom_dot 2s infinite; }
+      .loader4jsoverlay .loader4js-container .loader4js-logo span {
+        position: absolute;
+        display: block;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%; }
+      .loader4jsoverlay .loader4js-container .loader4js-logo #loader4js-top-dot {
+        top: 0px;
+        left: 40px;
+        background-color: #75B0C8; }
+      .loader4jsoverlay .loader4js-container .loader4js-logo #loader4js-left-dot {
+        left: 0px;
+        top: 40px;
+        background-color: #9BCB19; }
+      .loader4jsoverlay .loader4js-container .loader4js-logo #loader4js-right-dot {
+        right: 0px;
+        top: 40px;
+        background-color: #C37427; }
+      .loader4jsoverlay .loader4js-container .loader4js-logo #loader4js-bottom-dot {
+        left: 40px;
+        bottom: 0px;
+        background-color: #efe24b; }
+
+@keyframes loader4js_anim_rotat {
+  0% {
+    transform: rotateZ(0deg); }
+  50% {
+    transform: rotateZ(480deg); }
+  100% {
+    transform: rotateZ(0deg); } }
+@keyframes loader4js_anim_top_dot {
+  0% {
+    top: 0px;
+    opacity: 1; }
+  50% {
+    top: 32px;
+    opacity: 0.9; }
+  100% {
+    top: 0px;
+    opacity: 1; } }
+@keyframes loader4js_anim_bottom_dot {
+  0% {
+    bottom: 0px;
+    opacity: 1; }
+  50% {
+    bottom: 32px;
+    opacity: 0.9; }
+  100% {
+    bottom: 0px;
+    opacity: 1; } }
+@keyframes loader4js_anim_left_dot {
+  0% {
+    left: 0px;
+    opacity: 1; }
+  50% {
+    left: 32px;
+    opacity: 0.9; }
+  100% {
+    left: 0px;
+    opacity: 1; } }
+@keyframes loader4js_anim_right_dot {
+  0% {
+    right: 0px;
+    opacity: 1; }
+  50% {
+    right: 32px;
+    opacity: 0.9; }
+  100% {
+    right: 0px;
+    opacity: 1; } }
+@keyframes loader4js_anim_first_point {
+  0% {
+    opacity: 0.5; }
+  25% {
+    opacity: 1; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+@keyframes loader4js_anim_second_point {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  75% {
+    opacity: 0.5; }
+  100% {
+    opacity: 0; } }
+@keyframes loader4js_anim_third_point {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 1; }
+  100% {
+    opacity: 0.5; } }
+
+/*# sourceMappingURL=loader4js.css.map */

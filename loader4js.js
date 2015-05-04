@@ -30,7 +30,7 @@
             defaults = {
                 state: "hidden",
                 theme: "default",
-                text : "A moment please" 
+                text : "A moment please"
             };
 
         function Plugin ( element, options ) {
@@ -43,7 +43,7 @@
 
         $.extend(Plugin.prototype, {
             setHTMLContent: function() {
-                $(this.element).html('<div class="loader4jsoverlay"><div class="loader4js-container"><div class="loader4js-logo"><span class="loader4js-top-dot"><!-- empty --></span><span class="loader4js-left-dot"><!-- empty --></span><span class="loader4js-right-dot"><!-- empty --></span><span class="loader4js-bottom-dot"><!-- empty --></span></div><div class="loader4js-text"><h1><!-- empty --></h1><span class="loader4js-first-point">.</span><span class="loader4js-second-point">.</span><span class="loader4js-third-point">.</span></div></div></div>');
+                $(this.element).html('<div class="loader4jsoverlay"><div class="loader4js-container"><div class="loader4js-logo"><span id="loader4js-top-dot"><!-- empty --></span><span id="loader4js-left-dot"><!-- empty --></span><span id="loader4js-right-dot"><!-- empty --></span><span id="loader4js-bottom-dot"><!-- empty --></span></div><div class="loader4js-text"><h1><!-- empty --></h1><span id="loader4js-first-point">.</span><span id="loader4js-second-point">.</span><span id="loader4js-third-point">.</span></div></div></div>');
             },
             init: function () {
                 ///////////////
@@ -67,9 +67,9 @@
                 //// Theme ////
                 ///////////////
                 if(this.settings.theme === 'none') {
-                    $(this.element).find('.loader4js-logo').attr('class', 'loader4js-logo');   
+                    $(this.element).find('.loader4js-logo').attr('class', 'loader4js-logo');
                 } else if(this.settings.theme === "default" || this.settings.theme === "popandturn" ) {
-                    $(this.element).find('.loader4js-logo').attr('class', 'loader4js-logo loader4js-popandturn');   
+                    $(this.element).find('.loader4js-logo').attr('class', 'loader4js-logo loader4js-popandturn');
                 }
             },
             hide: function () {
@@ -82,6 +82,28 @@
                 var elem = $(this.element).find('.loader4js-container .loader4js-text').detach();
                 elem.find('h1').html(text);
                 $('.loader4js-container').append(elem);
+            },
+            pauseAnimations: function() {
+                var elem = $(this.element);
+                elem.find('.loader4js-logo').css('animation-play-state', 'paused');
+                elem.find('#loader4js-top-dot').css('animation-play-state', 'paused');
+                elem.find('#loader4js-left-dot').css('animation-play-state', 'paused');
+                elem.find('#loader4js-right-dot').css('animation-play-state', 'paused');
+                elem.find('#loader4js-bottom-dot').css('animation-play-state', 'paused');
+                elem.find('#loader4js-first-point').css('animation-play-state', 'paused');
+                elem.find('#loader4js-second-point').css('animation-play-state', 'paused');
+                elem.find('#loader4js-third-point').css('animation-play-state', 'paused');
+            },
+            resumeAnimations: function() {
+                var elem = $(this.element);
+                elem.find('.loader4js-logo').css('animation-play-state', 'paused');
+                elem.find('#loader4js-top-dot').css('animation-play-state', 'paused');
+                elem.find('#loader4js-left-dot').css('animation-play-state', 'paused');
+                elem.find('#loader4js-right-dot').css('animation-play-state', 'paused');
+                elem.find('#loader4js-bottom-dot').css('animation-play-state', 'paused');
+                elem.find('#loader4js-first-point').css('animation-play-state', 'paused');
+                elem.find('#loader4js-second-point').css('animation-play-state', 'paused');
+                elem.find('#loader4js-third-point').css('animation-play-state', 'paused');
             }
         });
 
