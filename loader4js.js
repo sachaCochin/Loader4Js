@@ -72,17 +72,6 @@
                     $(this.element).find('.loader4js-logo').attr('class', 'loader4js-logo loader4js-popandturn');
                 }
             },
-            hide: function () {
-                $(this.element).hide();
-            },
-            show: function() {
-                $(this.element).show();
-            },
-            setText: function(text) {
-                var elem = $(this.element).find('.loader4js-container .loader4js-text').detach();
-                elem.find('h1').html(text);
-                $('.loader4js-container').append(elem);
-            },
             pauseAnimations: function() {
                 var elem = $(this.element);
                 elem.find('.loader4js-logo').css('animation-play-state', 'paused');
@@ -96,14 +85,27 @@
             },
             resumeAnimations: function() {
                 var elem = $(this.element);
-                elem.find('.loader4js-logo').css('animation-play-state', 'paused');
-                elem.find('#loader4js-top-dot').css('animation-play-state', 'paused');
-                elem.find('#loader4js-left-dot').css('animation-play-state', 'paused');
-                elem.find('#loader4js-right-dot').css('animation-play-state', 'paused');
-                elem.find('#loader4js-bottom-dot').css('animation-play-state', 'paused');
-                elem.find('#loader4js-first-point').css('animation-play-state', 'paused');
-                elem.find('#loader4js-second-point').css('animation-play-state', 'paused');
-                elem.find('#loader4js-third-point').css('animation-play-state', 'paused');
+                elem.find('.loader4js-logo').css('animation-play-state', 'running');
+                elem.find('#loader4js-top-dot').css('animation-play-state', 'running');
+                elem.find('#loader4js-left-dot').css('animation-play-state', 'running');
+                elem.find('#loader4js-right-dot').css('animation-play-state', 'running');
+                elem.find('#loader4js-bottom-dot').css('animation-play-state', 'running');
+                elem.find('#loader4js-first-point').css('animation-play-state', 'running');
+                elem.find('#loader4js-second-point').css('animation-play-state', 'running');
+                elem.find('#loader4js-third-point').css('animation-play-state', 'running');
+            },
+            hide: function () {
+                $(this.element).hide();
+                this.pauseAnimations();
+            },
+            show: function() {
+                this.resumeAnimations();
+                $(this.element).show();
+            },
+            setText: function(text) {
+                var elem = $(this.element).find('.loader4js-container .loader4js-text').detach();
+                elem.find('h1').html(text);
+                $('.loader4js-container').append(elem);
             }
         });
 
