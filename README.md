@@ -47,3 +47,19 @@ $('element').Loader4Js().show();
 // Change the text
 $('element').Loader4Js().setText('My new text');
 ```
+
+### Some events ###
+
+Loader4Js provides some events helping you to execute some logics.
+
+```
+#!javascript
+
+$('#loader').Loader4Js({
+    theme: 'popandturn',
+    text: 'A moment please',
+    state: 'hidden',
+    onShow: function() {console.log('Showed !!');},
+    onHide: function() {console.log('Hidden !!');}
+});
+```
