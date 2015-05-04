@@ -5,7 +5,7 @@
 
 Loader4Js is a simple JQuery plugin which allows you to decorate your different waiting times on your pages.
 
-### How to get it working? ###
+### Dependencies ###
 
 Loader4Js only requires you to get a recent JQuery version.
 
