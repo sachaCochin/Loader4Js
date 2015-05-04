@@ -30,7 +30,9 @@
             defaults = {
                 state: "hidden",
                 theme: "default",
-                text : "A moment please"
+                text : "A moment please",
+                onShow: function() {},
+                onHide: function() {}
             };
 
         function Plugin ( element, options ) {
@@ -97,10 +99,12 @@
             hide: function () {
                 $(this.element).hide();
                 this.pauseAnimations();
+                this.settings.onHide();
             },
             show: function() {
                 this.resumeAnimations();
                 $(this.element).show();
+                this.settings.onShow();
             },
             setText: function(text) {
                 var elem = $(this.element).find('.loader4js-container .loader4js-text').detach();
