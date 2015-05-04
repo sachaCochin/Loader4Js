@@ -1,29 +1,50 @@
-# README #
+# Loader4Js #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### What is this Loader4Js for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Loader4Js is a simple JQuery plugin which allows you to decorate your different waiting times on your pages.
 
-### How do I get set up? ###
+### How to get it working? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Loader4Js only requires you to get a recent JQuery version.
 
-### Contribution guidelines ###
+### Instantiation ###
 
-* Writing tests
-* Code review
-* Other guidelines
+A basic instantiation of the Loader4Js with default options.
 
-### Who do I talk to? ###
+```
+#!javascript
 
-* Repo owner or admin
-* Other community or team contact
+$('element').Loader4Js();
+```
+
+A more complex instantiation of the Loader4Js with custom options.
+
+```
+#!javascript
+
+$('element').Loader4Js({
+    text: 'Wait a moment',
+    theme: 'popandturn',
+    state: 'hidden'
+});
+```
+
+### Basic manipulations ###
+
+Some basic manipulations of the Loader4Js instance.
+
+```
+#!javascript
+
+// Hide the loader
+$('element').Loader4Js().hide();
+
+
+// Show the loader
+$('element').Loader4Js().show();
+
+// Change the text
+$('element').Loader4Js().setText('My new text');
+```
