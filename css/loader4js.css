@@ -34,12 +34,13 @@ THE SOFTWARE.
     margin-top: 50vh;
     transform: translateX(-50%) translateY(-50%);
     text-align: center;
-    color: white; }
+    color: white;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
     .loader4jsoverlay .loader4js-container h1, .loader4jsoverlay .loader4js-container span {
+      margin-bottom: 0px;
       font-weight: bolder;
       font-size: 42px;
-      display: inline-block;
-      font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+      display: inline-block; }
     .loader4jsoverlay .loader4js-container #loader4js-first-point {
       animation: loader4js_anim_first_point linear 1s infinite; }
     .loader4jsoverlay .loader4js-container #loader4js-second-point {

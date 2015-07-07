@@ -54,11 +54,13 @@ $loader4js_points_animation_duration : 1s;
         text-align: center;
         color: white;
 
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;	
+
         h1, span {
+	    margin-bottom: 0px;
             font-weight: bolder;
             font-size: $loader4js_fontsize;
-            display: inline-block;
-            font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+            display: inline-block;            
         }
 
         #loader4js-first-point {

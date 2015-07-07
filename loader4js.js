@@ -31,6 +31,7 @@
                 state: "hidden",
                 theme: "default",
                 text : "A moment please",
+		details: "Charging things",
                 onShow: function() {},
                 onHide: function() {}
             };
@@ -45,7 +46,7 @@
 
         $.extend(Plugin.prototype, {
             setHTMLContent: function() {
-                $(this.element).html('<div class="loader4jsoverlay"><div class="loader4js-container"><div class="loader4js-logo"><span id="loader4js-top-dot"><!-- empty --></span><span id="loader4js-left-dot"><!-- empty --></span><span id="loader4js-right-dot"><!-- empty --></span><span id="loader4js-bottom-dot"><!-- empty --></span></div><div class="loader4js-text"><h1><!-- empty --></h1><span id="loader4js-first-point">.</span><span id="loader4js-second-point">.</span><span id="loader4js-third-point">.</span></div></div></div>');
+                $(this.element).html('<div class="loader4jsoverlay"><div class="loader4js-container"><div class="loader4js-logo"><span id="loader4js-top-dot"><!-- empty --></span><span id="loader4js-left-dot"><!-- empty --></span><span id="loader4js-right-dot"><!-- empty --></span><span id="loader4js-bottom-dot"><!-- empty --></span></div><div class="loader4js-text"><h1><!-- empty --></h1><span id="loader4js-first-point">.</span><span id="loader4js-second-point">.</span><span id="loader4js-third-point">.</span><h4><!-- empty --></h4></div></div></div>');
             },
             init: function () {
                 ///////////////
@@ -63,6 +64,13 @@
                 ////////////////
                 if(this.settings.text !== "") {
                     this.setText(this.settings.text);
+                }
+
+		////////////////
+                ///// Text /////
+                ////////////////
+                if(this.settings.details !== "") {
+                    this.setDetails(this.settings.details);
                 }
 
                 ///////////////
@@ -109,6 +117,11 @@
             setText: function(text) {
                 var elem = $(this.element).find('.loader4js-container .loader4js-text').detach();
                 elem.find('h1').html(text);
+                $('.loader4js-container').append(elem);
+            },
+            setDetails: function(details) {
+                var elem = $(this.element).find('.loader4js-container .loader4js-text').detach();
+                elem.find('h4').html(details);
                 $('.loader4js-container').append(elem);
             }
         });
